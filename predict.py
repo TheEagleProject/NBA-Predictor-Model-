@@ -14,4 +14,10 @@ def add_target(team):
 
 df = df.groupby("team", group_keys=False).apply(add_target)
 
-df["target"] [pd.isnull(df["target"])]
+df["target"] [pd.isnull(df["target"])] = 2
+df["target"] = df["target"].astype(int, errors="ignore")
+
+nulls = pd.isnull(df)
+nulls = nulls.sum()
+nulls[nulls > 0]
+valid_column = df.columns[~df.clumns.isin(nulls.index)]
